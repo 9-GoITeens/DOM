@@ -7,6 +7,17 @@ const magicBtn = document.querySelector('.js-magic-btn');
  * Що повертає?
  */
 
+magicBtn.addEventListener('click', () => {
+  const navEl = document.querySelector('ul');
+  console.dir(navEl);
+
+  const navItemEl = document.querySelector('.site-nav__item');
+  console.log(navItemEl);
+
+  const navLinksEl = document.querySelectorAll('.site-nav__link');
+  console.log(navLinksEl);
+});
+
 /*
  * Document.querySelector* і Element.querySelector*
  */
