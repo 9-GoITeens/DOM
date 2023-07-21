@@ -12,32 +12,6 @@ const colorPickerOptions = [
 
 const colorPickerContainerEl = document.querySelector('.js-color-picker');
 
-// const elements = colorPickerOptions.map(option => {
-//   const buttonEl = document.createElement('button');
-//   buttonEl.type = 'button';
-//   buttonEl.classList.add('color-picker__option');
-//   buttonEl.textContent = option.label;
-//   buttonEl.style.backgroundColor = option.color;
-
-//   return buttonEl;
-// });
-
-// console.log(elements);
-
 /*
  * Пишемо функцію для створення размітки колорпікера
  */
-const makeColorPickerOptions = options => {
-  return options.map(option => {
-    const buttonEl = document.createElement('button');
-    buttonEl.type = 'button';
-    buttonEl.classList.add('color-picker__option');
-    buttonEl.textContent = option.label;
-    buttonEl.style.backgroundColor = option.color;
-
-    return buttonEl;
-  });
-};
-
-const elements = makeColorPickerOptions(colorPickerOptions);
-colorPickerContainerEl.append(...elements);
