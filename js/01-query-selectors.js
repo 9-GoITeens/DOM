@@ -28,7 +28,7 @@ console.dir(navEl);
 // console.log(navItemEl);
 
 // const navLinksEl = document.querySelectorAll('.site-nav__link');
-const navLinksEl = document.querySelectorAll('.qwe');
+const navLinksEl = document.querySelectorAll('.site-nav__item"');
 console.log(navLinksEl);
 /*
  * Document.querySelector* і Element.querySelector*

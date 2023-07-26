@@ -11,7 +11,51 @@ const colorPickerOptions = [
 ];
 
 const colorPickerContainerEl = document.querySelector('.js-color-picker');
+const option = colorPickerOptions[0];
+
+// const buttonEl = document.createElement('button');
+// buttonEl.type = 'button';
+// buttonEl.textContent = option.label;
+// buttonEl.style.backgroundColor = option.color;
+// buttonEl.classList.add('color-picekr__option');
+
+// const elements = colorPickerOptions.map(option => {
+//   const buttonEl = document.createElement('button');
+//   buttonEl.type = 'button';
+//   buttonEl.textContent = option.label;
+//   buttonEl.style.backgroundColor = option.color;
+//   buttonEl.classList.add('color-picekr__option');
+
+//   return buttonEl;
+// });
+
+// console.log(elements);
+// colorPickerContainerEl.append(...elements);
+// console.log(colorPickerContainerEl);
+
+// const option = colorPickerOptions[0];
+
+// const buttonEl = document.createElement('button');
+// buttonEl.type = 'button';
+// buttonEl.textContent = option.label;
+// buttonEl.style.backgroundColor = option.color;
+// buttonEl.classList.add('color-picekr__option');
+// console.log(buttonEl);
 
 /*
  * Пишемо функцію для створення размітки колорпікера
  */
+const makeColorPickerOptions = option => {
+  return option.map(option => {
+    const buttonEl = document.createElement('button');
+    buttonEl.type = 'button';
+    buttonEl.textContent = option.label;
+    buttonEl.style.backgroundColor = option.color;
+    buttonEl.classList.add('color-picekr__option');
+
+    return buttonEl;
+  });
+};
+
+const elements = makeColorPickerOptions(colorPickerOptions);
+colorPickerContainerEl.append(...elements);
