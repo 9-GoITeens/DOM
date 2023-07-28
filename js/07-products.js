@@ -1,3 +1,5 @@
+import products from './data/proucts..js';
+console.log(products);
 /*
  * Створюємо карточку продукта
  * - В класі продукта може бути product--on-sale product--not-available
@@ -22,24 +24,24 @@ const product = {
 */
 }
 
-const podacktEl = document.createElement('article');
-podacktEl.classList.add('product');
+// const podacktEl = document.createElement('article');
+// podacktEl.classList.add('product');
 
-const nameEl = document.createElement('h2');
-nameEl.classList.add('product__name');
-nameEl.textContent = product.name;
+// const nameEl = document.createElement('h2');
+// nameEl.classList.add('product__name');
+// nameEl.textContent = product.name;
 
-const textEl = document.createElement('p');
-textEl.classList.add('product__descr');
-textEl.textContent = product.description;
+// const textEl = document.createElement('p');
+// textEl.classList.add('product__descr');
+// textEl.textContent = product.description;
 
-const priceEl = document.createElement('p');
-priceEl.classList.add('product__price');
-priceEl.textContent = product.price;
+// const priceEl = document.createElement('p');
+// priceEl.classList.add('product__price');
+// priceEl.textContent = product.price;
 
-podacktEl.append(nameEl, textEl, priceEl);
+// podacktEl.append(nameEl, textEl, priceEl);
 
-console.log('podacktEl', podacktEl);
+// console.log('podacktEl', podacktEl);
 // console.log(nameEl);
 // console.log(textEl);
 // console.log(priceEl);
@@ -47,3 +49,32 @@ console.log('podacktEl', podacktEl);
 /*
  * Пишемо функцію для створення карточки продукту
  */
+const makeProdaktCard = ({ name, description, price }) => {
+  const podacktEl = document.createElement('article');
+  podacktEl.classList.add('product');
+
+  const nameEl = document.createElement('h2');
+  nameEl.classList.add('product__name');
+  nameEl.textContent = name;
+
+  const textEl = document.createElement('p');
+  textEl.classList.add('product__descr');
+  textEl.textContent = description;
+
+  const priceEl = document.createElement('p');
+  priceEl.classList.add('product__price');
+  priceEl.textContent = price;
+
+  podacktEl.append(nameEl, textEl, priceEl);
+
+  return podacktEl;
+};
+
+// console.log(makeProdaktCard(products[0]));
+
+const elements = products.map(makeProdaktCard);
+
+const productContainerEl = document.querySelector('.js-products');
+productContainerEl.append(...elements);
+// console.log(productContainerEl);
+// console.log(elements);
